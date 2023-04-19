@@ -1012,8 +1012,8 @@ odoo.define("board.dashboard_tests", function (require) {
         var view_domain = ["display_name", "ilike", "a"];
         var filter_domain = ["display_name", "ilike", "b"];
 
-        // The filter domain already contains the view domain, but is always added by dashboard..,
-        var expected_domain = ["&", view_domain, "&", view_domain, filter_domain];
+        // The filter should contain only view and filter domain with and
+        var expected_domain = ["&", view_domain, filter_domain];
 
         serverData.views = {
             "partner,false,list": '<list><field name="foo"/></list>',
